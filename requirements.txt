@@ -1,0 +1,8 @@
+Flask==2.0.3
+Flask_WTF==1.0.1
+keras==2.7.0
+keras_nightly==2.5.0.dev2021032900
+numpy==1.22.1
+Pillow==9.0.1
+Werkzeug==2.0.1
+WTForms==2.3.3
