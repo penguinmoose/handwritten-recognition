@@ -1,0 +1,13 @@
+{% extends "template.html" %}
+
+{% block title %}
+"TEST"
+{% endblock %}
+{% block body %}
+
+<h1>Hi, {{ user.username }}!</h1>
+<div>
+    <p>The database data is this: {{data}}</p>
+    <a href="/">Index Page</a>
+</div>
+{% endblock %}
