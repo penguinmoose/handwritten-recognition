@@ -1,3 +1,8 @@
-from flask.app import Flask
+import os
+from flask import Flask
+
 app = Flask(__name__)
-from app import routes
+
+app.config['SECRET_KEY'] = 'stdv2grirb8hcouistyd'
+
+from app import views

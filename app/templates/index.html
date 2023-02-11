@@ -1,0 +1,26 @@
+{% extends "templates/template.html" %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block main %}
+<div class="main">
+    <div>This app can classify handwritten digits. Simply upload an image.</div>
+    <div class="content-section" id="form">
+    <form method="POST" enctype=multipart/form-data action="/">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">File Upload</legend>
+            <div class="form-group" id="form"><br></div>
+
+            <div class="form-group">{{ form.file.label}}{% if form.file.errors %}{{ form.file(class="form-control form-control-lg
+                is-invalid") }}{% for error in form.file.errors %}<span>{{ error }}</span>{% endfor %}{% else %}{{
+                form.file(class="form-control form-control-lg") }}{% endif %}</div>
+        </fieldset>
+        <!-- <div class = "background"> --><!-- If the background is white, please check: {{form.white_background}} --><!-- </div> -->
+        {{form.submit(class="btn btn-outline-info")}}
+        </form>
+    </div>
+</div>
+
+{% endblock %}{% block script %}
+<script></script>{% endblock %}
