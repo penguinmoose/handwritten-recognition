@@ -5,7 +5,8 @@ from app.forms import (UploadForm, ResultForm)
 from datetime import datetime
 from werkzeug.utils import secure_filename
 import numpy as np
-from keras_preprocessing import image
+#from keras_preprocessing import image
+from keras.utils import load_img, img_to_array
 from keras.models import load_model
 from PIL import Image
 
