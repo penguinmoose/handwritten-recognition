@@ -1,5 +1,6 @@
 # handwritten-recognition
 A flask app to recognize handwritten digits. Uses TensorFlow.
+Please use tensorflow 2.9.
 
 ## Quick start
 After cloning this repository, run [`start.sh`](https://github.com/penguinmoose/handwritten-recognition/blob/main/start.sh).
