@@ -56,3 +56,7 @@ def upload_file():
             return render_template("index.html", title="Home", form=form)
     else:
         return render_template("index.html", title="Home", form=form)
+
+@app.route('/about', methods=['GET'])
+def about():
+    return render_template("about.html", title="About")
