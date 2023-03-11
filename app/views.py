@@ -19,10 +19,10 @@ def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 def evaluate_img(path):
-    img = image.load_img(path, color_mode='grayscale', target_size=(28,28))
+    img = load_img(path, color_mode='grayscale', target_size=(28,28))
     #if white_bg:
     #    img = Image.fromarray(np.invert(img))
-    x = image.img_to_array(img)
+    x = img_to_array(img)
     if np.average(x) - 128 > 0:
         x = 255 - x
     x /= 255
