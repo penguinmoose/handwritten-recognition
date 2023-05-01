@@ -1,4 +1,4 @@
-Flask==2.0.3
+Flask==2.3.2
 Flask_WTF==1.0.1
 keras==2.7.0
 keras_nightly==2.5.0.dev2021032900
