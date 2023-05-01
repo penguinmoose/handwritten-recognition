@@ -4,7 +4,7 @@
 
 {% block main %}
 <div class="main">
-    <div>This app can classify handwritten digits. Simply upload an image.</div>
+    <div>This app can recognize handwritten numbers from an image. The image can be single-digit or can have as many digits as you want. Upload an image file below.</div>
     <div class="content-section" id="form">
     <form method="POST" enctype=multipart/form-data action="/">
         {{ form.hidden_tag() }}
@@ -16,7 +16,6 @@
                 is-invalid") }}{% for error in form.file.errors %}<span>{{ error }}</span>{% endfor %}{% else %}{{
                 form.file(class="form-control form-control-lg") }}{% endif %}</div>
         </fieldset>
-        <!-- <div class = "background"> --><!-- If the background is white, please check: {{form.white_background}} --><!-- </div> -->
         {{form.submit(class="btn btn-outline-info")}}
         </form>
     </div>

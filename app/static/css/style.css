@@ -9,3 +9,40 @@ body {
 .result {
     font-size: 40px;
 }
+
+table,
+th,
+td {
+    border-left: 1px solid #888;
+    border-right: 1px solid #888;
+    border-collapse: collapse;
+    padding: 5px 25px;
+}
+
+th {
+    margin-bottom: 5px;
+}
+
+.progress {
+    height: 1.5em;
+    width: 40px;
+    background-color: #c9c9c9;
+    position: relative;
+    float: right;
+}
+
+.progress:before {
+    content: attr(data-label);
+    font-size: 0.8em;
+    position: absolute;
+    text-align: center;
+    top: 3px;
+    left: 0;
+    right: 0;
+}
+
+.progress .value {
+    background-color: #b8e2ff;
+    display: inline-block;
+    height: 100%;
+}

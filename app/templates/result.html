@@ -4,24 +4,44 @@
 
 {% block main %}
 
-<div class="content-section" id="form">
-    <form method="GET" enctype=multipart/form-data action="/">
-        {{ form.hidden_tag() }}
-        <fieldset class="form-group">
-            <legend class="border-bottom mb-4"> Result</legend>
-            <div class="form-group" id="form"></br></div>
-            <div class="form-group">
-                <img src="{{path}}" width="56", height="56">
-            </div>
-            <div class="result">Prediction: {{ pred }}<br></div>
-            <div class="possibility">
-                Probability between 0 and 9:<br>
-                {% for row in result %}
-                {{loop.index - 1}} : <progress value="{{(row * 100)|round(2, 'common')}}" max="100">{{(row * 100)|round(2, 'common')}}</progress> {{(row * 100)|round(2, 'common')}} %<br>
-                {% endfor %}
-            </div>
+<div class ="content-section" id = "form">
+	<form method ="GET" enctype=multipart/form-data action ="/">
+		{{ form.hidden_tag() }}
+		<fieldset class="form-group">
+			<legend class="border-bottom mb-4"> Result</legend>
+				<div class="form-group" id="form">
+                    </br>
+                </div>
+                <div class="form-group"> 
+					<table>
+						<tr>
+                            {% for col in results %}
+                                <td>
+                                    <img src="{{col[2]}}" width="56", height="56">
+                                </td>
+                            {% endfor%}
+                        </tr>
+                        <tr>
+                            {% for col in results %}
+                                <td class="result">
+                                    {{col[1]}}
+                                </td>
+                            {% endfor%}  
+                        </tr>
+                        <tr>
+                            {% for col in results %}
+                                <td>
+                                    {% for row in col[0] %} 
+                                        {{loop.index - 1}}: <span class="progress" data-label="{{(row * 100)|round(2, 'common')}}%"><span class="value" style="width: {{(row * 100)|round(2, 'common')}}%;"></span></span>
+                                        <br>
+                                    {% endfor %}
+                                </td>
+                            {% endfor%}
+                        </tr> 			
+					</table>                  
+				</div>
         </fieldset>
-        {{ form.submit(class="btn btn-outline-info")}}
+		{{ form.submit(class="btn btn-outline-info")}}
     </form>
 </div>
 
@@ -29,6 +49,5 @@
 
 {% block script %}
 <script>
- // alert("Template inheritance is awesome");
 </script>
 {% endblock %}
