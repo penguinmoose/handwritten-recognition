@@ -1,3 +1,5 @@
+Live at [`52.39.104.126`](http://52.39.104.126/)
+
 # handwritten-recognition
 A flask app to recognize handwritten digits. Uses TensorFlow.
 Please use tensorflow 2.9.

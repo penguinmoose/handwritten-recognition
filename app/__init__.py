@@ -3,6 +3,6 @@ from flask import Flask
 
 app = Flask(__name__)
 
-app.config['SECRET_KEY'] = 'stdv2grirb8hcouistyd'
+app.config['SECRET_KEY'] = 'XXXXXXXXXXX'
 
 from app import views
